@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GenesysLabs — Operating Blueprint</title>
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="logo"><div class="logo-icon" aria-hidden="true">G<span class="logo-mark"></span></div><div><strong>GenesysLabs</strong><small>Operating Blueprint</small></div></div>
+  <div class="side-caption">NAVIGATE WORKSPACE</div>
+  <button class="nav-btn active" data-view="overview" title="Lifecycle overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="8" height="7" rx="1.5"/><rect x="14" y="3" width="8" height="7" rx="1.5"/><rect x="8" y="14" width="8" height="7" rx="1.5"/><path d="M6 10v2h12v-2M12 12v2"/></svg><span>Lifecycle map</span></button>
+  <button class="nav-btn" data-view="branches" title="Business branches"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h5a5 5 0 0 1 5 5v7M5 7v12h12"/></svg><span>Business paths</span></button>
+  <button class="nav-btn" data-view="roles" title="Responsibility swimlanes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 6h20M2 12h20M2 18h20"/><rect x="5" y="3" width="5" height="6" rx="1"/><rect x="13" y="9" width="7" height="6" rx="1"/></svg><span>Responsibility lanes</span></button>
+  <button class="nav-btn" data-view="money" title="Money and contracts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 15h4"/></svg><span>Contracts & payments</span></button>
+  <button class="nav-btn" data-view="logistics" title="Physical supply chain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h12v11H3zM15 8h4l3 4v3h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="19" cy="17" r="2"/></svg><span>Physical supply chain</span></button>
+  <div class="side-spacer"></div>
+  <div class="side-info"><strong>WORKING BLUEPRINT · V0.3</strong><p>Draft processes, visible assumptions and unresolved decisions. Local editing; no backend.</p><span class="side-pill">● Internal · not published</span></div>
+  <div class="sidebar-foot"><span class="tiny-status"></span> Internal working model<br/>Austria ↔ India ↔ Partners</div>
+</aside>
+<main class="main">
+  <header class="header"><div class="header-row"><div><div class="eyebrow">GENESYSLABS / WORKSPACE</div><h1>Design the journey. Own the delivery.</h1><p>A connected operating model from the first European customer conversation to engineering, fulfilment and ongoing service.</p></div><div class="header-actions"><button id="exportBtn" class="btn" title="Download your process data as JSON">↓ Export JSON</button><button id="importBtn" class="btn" title="Load previously exported process data">↑ Import</button><input id="importFile" type="file" accept=".json,application/json" class="hidden"/><button id="resetBtn" class="btn warn" title="Restore the original template">↺ Reset</button></div></div></header>
+  <div class="toolbar"><div class="tool-cluster"><span class="live-mark"><i></i> DRAFT WORKSPACE</span><span class="stat"><strong>12</strong> lifecycle phases</span><span class="stat"><strong>4</strong> business paths</span><span class="stat"><strong>AT ↔ IN</strong> cross-border model</span></div><div class="tool-cluster"><span class="legend"><i class="dot confirmed"></i> Confirmed</span><span class="legend"><i class="dot proposed"></i> Proposed</span><span class="legend"><i class="dot open"></i> Open decision</span><button id="helpBtn" class="btn small">? How to use</button></div></div>
+  <section class="workspace"><div class="canvas-area"><div class="canvas-intro"><div><h2 id="viewTitle">Customer lifecycle map</h2><p id="viewSub">Select a stage to inspect or edit its process, documents and open decisions.</p></div><div class="map-controls" id="zoomControls"><button class="control-button" id="zoomOut" title="Zoom out">−</button><span class="zoom-val" id="zoomVal">100%</span><button class="control-button" id="zoomIn" title="Zoom in">+</button><button class="btn small" id="zoomFit" title="Fit all stages into view">Fit map</button><button class="btn small" id="focusCanvas" title="Toggle distraction-free canvas">Focus canvas</button></div></div><div id="viewHost" class="canvas-area" style="flex:1;min-height:0;"></div></div>
+  <aside id="inspector" class="inspector"><div id="inspectorHost" style="display:flex;flex-direction:column;min-height:0;height:100%"></div></aside></section>
+</main></div>
+<div id="modalHost"></div>
+<script defer src="src/blueprint-data.js"></script>
+<script defer src="src/app.js"></script>
+</body>
+</html>

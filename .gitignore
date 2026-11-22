@@ -41,6 +41,20 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local editor / operating system files
+Thumbs.db
+.vscode/
+.idea/
+
+# optional static tooling output and local environment files
+dist/
+.env.*
+!.env.example
+*.log
+
+# unreviewed process exports can contain sensitive workshop data
+*-local-export.json
+
 # cache
 .cache
 .eslintcache
